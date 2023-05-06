@@ -1,8 +1,8 @@
-body{
+body {
     background-color: black;
 }
 
-.titel-box{
+.titel-box {
     width: 99vw;
     height: 99vh;
     display: grid;
@@ -12,7 +12,7 @@ body{
     margin-top: -1vw;
 }
 
-.titel-img{
+.titel-img {
     width: 100vw;
 
     grid-row: 1;
@@ -23,7 +23,7 @@ body{
 
 }
 
-.filmby-img{
+.filmby-img {
     width: 13vw;
     margin-top: 1.2vw;
     grid-row: 1;
@@ -31,7 +31,7 @@ body{
     justify-self: center;
 }
 
-.quote-img{
+.quote-img {
     width: 35vw;
     margin-top: 11.5vw;
     grid-row: 2;
@@ -40,11 +40,11 @@ body{
     align-self: start;
 }
 
-.quote2-img{
+.quote2-img {
     opacity: 0;
 }
 
-.man-img{
+.man-img {
     width: 45vw;
     grid-row: 1;
     grid-column: 1;
@@ -52,7 +52,7 @@ body{
     margin-left: 11vw;
 }
 
-.ship-img{
+.ship-img {
     width: 40vw;
     grid-row: 1;
     grid-column: 3;
@@ -61,15 +61,15 @@ body{
 }
 
 @media screen and (max-width: 1080px) {
-    .titel-box{
+    .titel-box {
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 33vw 33vw 33vw;
     }
 
-    .titel-img{
+    .titel-img {
         transform: rotate(270deg);
         width: 210vw;
-    
+
         margin-top: -25vw;
         margin-left: -57vw;
 
@@ -77,16 +77,16 @@ body{
         grid-column: 1;
     }
 
-    .filmby-img{
+    .filmby-img {
         width: 60vw;
         margin-top: 5vw;
     }
-    
-    .quote-img{
+
+    .quote-img {
         opacity: 0;
     }
 
-    .quote2-img{
+    .quote2-img {
         opacity: 1;
 
         width: 110vw;
@@ -99,9 +99,33 @@ body{
         justify-self: center;
         align-self: flex-end;
     }
-    
-    .man-img{
-        transform: rotate(10deg);
+
+    @keyframes man-ani {
+        0% {
+            transform: translate(0vw, 0vw);
+            transform: rotate(0deg);
+        }
+
+        33% {
+            transform: translate(8vw, -6vw);
+            
+        }
+
+        66% {
+            transform: translate(2vw, -6vw);
+            transform: rotate(5deg);
+        }
+
+        100% {
+            transform: translate(0vw, 0vw);
+        }
+    }
+
+    .man-img {
+        animation-name: man-ani;
+        animation-duration: 15s;
+        animation-iteration-count: infinite;
+
         width: 110vw;
 
         grid-row: 3;
@@ -111,10 +135,40 @@ body{
         margin-left: 40vw;
 
         justify-self: center;
-        z-index: 2;
     }
-    
-    .ship-img{
+
+    @keyframes ship-ani {
+        0% {
+            transform: translate(0vw, 0vw);
+            transform: rotate(0deg);
+        }
+
+        10% {
+            transform: translate(0vw, 0vw);
+            transform: rotate(0deg);
+        }
+
+        40% {
+            transform: translate(-8vw, 6vw);
+            
+        }
+
+        70% {
+            transform: translate(-2vw, 6vw);
+            transform: rotate(-5deg);
+        }
+
+        100% {
+            transform: translate(0vw, 0vw);
+        }
+    }
+
+
+    .ship-img {
+        animation-name: ship-ani;
+        animation-duration: 15s;
+        animation-iteration-count: infinite;
+
         transform: rotate(-8deg);
         width: 100vw;
 
@@ -123,8 +177,7 @@ body{
 
         margin-left: 2vw;
         margin-top: 12vw;
- 
+
         z-index: -1;
     }
 }
-
