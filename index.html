@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2001 A Space Odyssey</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <div class="titel-box">
+        <img src="images/Filmby.webp" class="filmby-img" alt="">
+        <img src="images/titel.webp" class="titel-img" alt="">
+        <img src="images/Quote.webp" class="quote-img" alt="">
+        <img src="images/quote2.webp" class="quote2-img" alt="">
+        <img src="images/Man.webp" class="man-img" alt="">
+        <img src="images/Ship.webp" class="ship-img" alt="">
+    </div>
+
+
+</body>
+
+<script>
+    const moveableImage = document.querySelector('.man-img');
+    const moveableImage2 = document.querySelector('.ship-img');
+
+    document.addEventListener('mousemove', function (e) {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        moveableImage.style.transform = 'translate(' + (x * 25) + 'px,' + (y * 15) + 'px) rotate(' + (x * 1) + 'deg)';
+        moveableImage2.style.transform = 'translate(' + (-x * 25) + 'px,' + (-y * 15) + 'px) rotate(' + (x * 1) + 'deg)';
+    });  
+</script>
+
+</html>
